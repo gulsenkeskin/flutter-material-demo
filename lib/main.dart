@@ -108,6 +108,7 @@ class MyHomePage extends StatelessWidget {
                   children: [
                     FlatButton(onPressed: (){
                       //bi önceki sayfaya dönmek için
+                      Navigator.of(context).pop();
                     }, child: const Text("I\'M ALLERGIC"),),
                     RaisedButton(
                       onPressed: (){},
