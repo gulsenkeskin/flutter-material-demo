@@ -101,17 +101,20 @@ class MyHomePage extends StatelessWidget {
                 style: localTheme.textTheme.bodyText1,
               ),
               //öğreleri sarma widgeti
-              Wrap(
-                children: [
-                  FlatButton(
-                    onPressed: () {},
-                    child: const Text("I\'M ALLERGIC"),
-                  ),
-                  RaisedButton(
-                    onPressed: () {},
-                    child: const Text("ADOPT"),
-                  )
-                ],
+              Align(
+                //sağa hizalar
+                alignment: Alignment.centerRight,
+                child: Wrap(
+                  children: [
+                    FlatButton(onPressed: (){
+                      //bi önceki sayfaya dönmek için
+                    }, child: const Text("I\'M ALLERGIC"),),
+                    RaisedButton(
+                      onPressed: (){},
+                      child: const Text("ADOPT"),
+                    )
+                  ],
+                ),
               ),
             ],
           ),
