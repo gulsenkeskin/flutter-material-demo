@@ -67,9 +67,11 @@ class MyHomePage extends StatelessWidget {
   Widget _dialogBuilder(BuildContext context, Kitten kitten) {
     return SimpleDialog(
       children: [
-        Container(
-          width: 80.0,
-          height: 80.0,
+        //ağa yüklenen resimler için network kullanılır
+        Image.network(
+          kitten.imageUrl.toString(),
+          //tam ekran yapmak için
+          fit:BoxFit.fill,
         )
       ],
     );
