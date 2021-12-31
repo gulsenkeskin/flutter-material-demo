@@ -14,6 +14,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         //birincil renk özelliği
         primarySwatch: Colors.purple,
+        buttonColor: Colors.purple,
+        buttonTheme: const ButtonThemeData(
+          textTheme: ButtonTextTheme.primary,
+        )
       ),
       home: const MyHomePage(),
     );
