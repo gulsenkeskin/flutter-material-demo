@@ -65,6 +65,7 @@ class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
   Widget _dialogBuilder(BuildContext context, Kitten kitten) {
+    ThemeData localTheme = Theme.of(context);
     return SimpleDialog(
       //üstteki padingi 0 lamak için
       contentPadding: EdgeInsets.zero,
@@ -81,9 +82,37 @@ class MyHomePage extends StatelessWidget {
             //yazıları başa hizalar
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(kitten.name.toString()),
-              Text("${kitten.age.toString()} months old"),
-              Text(kitten.description.toString())
+              Text(
+                kitten.name.toString(),
+                style: localTheme.textTheme.headline5,
+              ),
+              Text(
+                "${kitten.age.toString()} months old",
+                style: localTheme.textTheme.subtitle1!.copyWith(
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              //boşluğu kapatmak için sized box adlı bir widget kullanırız
+              SizedBox(
+                height: 16.0,
+              ),
+              Text(
+                kitten.description.toString(),
+                style: localTheme.textTheme.bodyText1,
+              ),
+              //öğreleri sarma widgeti
+              Wrap(
+                children: [
+                  FlatButton(
+                    onPressed: () {},
+                    child: const Text("I\'M ALLERGIC"),
+                  ),
+                  RaisedButton(
+                    onPressed: () {},
+                    child: const Text("ADOPT"),
+                  )
+                ],
+              ),
             ],
           ),
         )
