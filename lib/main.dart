@@ -78,8 +78,12 @@ class MyHomePage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            //yazıları başa hizalar
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-
+              Text(kitten.name.toString()),
+              Text("${kitten.age.toString()} months old"),
+              Text(kitten.description.toString())
             ],
           ),
         )
